@@ -1,0 +1,19 @@
+[package]
+name = "voxel-studio"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.89"
+description = "A native voxel asset editor with textured mesh import"
+
+[dependencies]
+eframe = { version = "0.31", default-features = false, features = ["glow", "x11", "wayland", "default_fonts"] }
+glam = "0.29"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "tga", "bmp"] }
+rfd = "0.15"
+tobj = "4"
+tempfile = "3"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+strip = true
